@@ -1,0 +1,18 @@
+
+;; ----- smex-history -----
+(
+ shell
+ load-file
+ magit-status
+ cd
+ 5x5
+ arp
+ dbx
+)
+
+;; ----- smex-data -----
+(
+ (magit-status . 1)
+ (load-file . 1)
+ (shell . 1)
+)
