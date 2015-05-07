@@ -72,14 +72,19 @@
 ;;; ============================================================================
 ;;; Prevent emacs from putting backup files everywhere
 ;;; ============================================================================
-(setq
- backup-by-copying t ; don't clobber symlinks
- backup-directory-alist
- '(("." . "~/.saves")) ; don't litter my fs tree
- delete-old-versions t
- kept-new-versions 6
- kept-old-versions 2
- version-control t) ; use versioned backups
+;(setq
+ ;backup-by-copying t ; don't clobber symlinks
+; backup-directory-alist
+ ;'(("." . "~/.saves")) ; don't litter my fs tree
+; delete-old-versions t
+; kept-new-versions 6
+ ;kept-old-versions 2
+; version-control t) ; use versioned backups
+
+;;; Put backup files in tmp directory
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+(setq auto-save-list-file-prefix temporary-file-directory)
 
 ;; Omnisharpmode
 (defun fuck-csharp-mode ()
@@ -102,7 +107,7 @@
 ;;; ============================================================================
 ;;; Use C-c h to do -ls-git, for finding files in a git project
 ;;; ============================================================================
-(global-set-key (kbd "C-c h") 'helm-ls-git-ls)
+;;(global-set-key (kbd "C-c h") 'helm-ls-git-ls)
 
 
 
