@@ -29,7 +29,13 @@
 ;; path to os fucker
 (setq exec-path (append exec-path '("/usr/local/bin/")))
 
-;; starting keyboard
+
+;; smex bindings
+(autoload 'smex "smex")
+(global-set-key (kbd "M-x") 'smex)
+(setq smex-save-file "~/.emacs.d/plugin-data/smex/smex-items")
+
+;; starting dir
 (setq default-directory "~/")
 
 ;;Melpa package hittepå
