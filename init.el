@@ -29,11 +29,30 @@
 ;; path to os fucker
 (setq exec-path (append exec-path '("/usr/local/bin/")))
 
+;;; Don't prompt so much
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq confirm-nonexistent-file-or-buffer nil)
+
+;; Don't ask to kill buffers with active processes
+(setq kill-buffer-query-functions
+  (remq 'process-kill-buffer-query-function
+         kill-buffer-query-functions))
 
 ;; smex bindings
 (autoload 'smex "smex")
 (global-set-key (kbd "M-x") 'smex)
 (setq smex-save-file "~/.emacs.d/plugin-data/smex/smex-items")
+
+;;; Dired subtree viewing with 'i'
+(require 'dired)
+(define-key dired-mode-map (kbd "i") 'dired-subtree-toggle)
+
+;;; Toggle show hidden files with C-c h
+(require 'dired-x)
+(setq dired-omit-files "^\\...+$")
+(add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
+(define-key dired-mode-map (kbd "C-c h") 'dired-omit-mode)
+
 
 ;; starting dir
 (setq default-directory "~/")
