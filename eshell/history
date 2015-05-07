@@ -1,0 +1,52 @@
+ls
+cd ~/
+ls
+man ls
+neato -Tpng -O graptest.dot
+ls
+cd Documents/lisp/land\ of\ lisp/
+ls
+neato -Tpng -O graptest.dot
+open Land\ of\ Lisp.pdf 
+neato -Tpng -O graptest.dot
+neato -help
+neato -O graptest.dot 
+neato -Tpng -O graptest.dot
+neato -O graptest.dot 
+ls
+dot -c
+sudo dot -x
+sudo dot -c
+neato -Tpng -O graptest.dot
+neato -Tpng -O graptest.dot
+neato -Tpng -O graptest.dot
+ls
+rm graptest.dot.dot
+ls
+open graptest.dot.png
+clisp
+brew install clisp
+clisp
+ls
+open wizard.dot.png
+open wizard.dot.png
+open wizard.dot
+neato -Tpng -O wizard.dot.png
+neato -Tpng -O wizard.dot
+open wizard.dot.png
+open wizard.dot.png
+rm wizard.do*
+ls
+open wizard.dot.png
+open wizard.dot.png
+rm wizard.dot*
+ls
+ls
+open wizard.dot.png
+wizard.dot
+open wizard.dot.png
+open uwizard.dot.png
+ls
+mv graphvizlib.lisp graph-util.lisp
+ls
+ls
