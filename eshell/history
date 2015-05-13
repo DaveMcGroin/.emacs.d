@@ -50,3 +50,12 @@ ls
 mv graphvizlib.lisp graph-util.lisp
 ls
 ls
+ls
+cd ~/Documents/3LMR/
+ls
+cd ..
+ls
+ls lisp
+cp lisp/rovarspraket.lisp 3LMR/
+ls
+ls 3LMR/

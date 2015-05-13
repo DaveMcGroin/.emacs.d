@@ -8,6 +8,7 @@
 (display-time)
 (column-number-mode 1)
 ;;(helm-mode 1)
+(display-battery-mode t)
 (setenv "LANG" "sv_SE.UTF-8")
 
 ;; Multiterm
