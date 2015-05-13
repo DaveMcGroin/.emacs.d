@@ -1,18 +1,21 @@
 
 ;; ----- smex-history -----
 (
+ w3m
  shell
- load-file
+ list-packages
+ version
  magit-status
+ load-file
  cd
- 5x5
- arp
- dbx
 )
 
 ;; ----- smex-data -----
 (
- (magit-status . 1)
- (load-file . 1)
- (shell . 1)
+ (magit-status . 4)
+ (load-file . 4)
+ (shell . 2)
+ (list-packages . 4)
+ (version . 1)
+ (w3m . 5)
 )
