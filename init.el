@@ -58,12 +58,6 @@
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (setq auto-save-list-file-prefix temporary-file-directory)
 
-;;; ============================================================================
-;;; Enable quicklisp
-;;; ============================================================================
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
-(setq inferior-lisp-program "clisp")
-
 
 ;;; ============================================================================
 ;;; Fix some character issues with M-x ansi-term
@@ -73,16 +67,6 @@
 (ad-activate 'ansi-term)
 ;; Use Emacs terminfo, not system terminfo
 (setq system-uses-terminfo nil)
-
-
-;;; ============================================================================
-;;mac skit
-;;; ============================================================================
-(setq mac-option-key-is-meta nil)
-(setq mac-command-key-is-meta t)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
-
 
 ;;; ============================================================================
 ;;; Scroll half window height with C-v / M-v (TACK MAX)
