@@ -1,22 +1,16 @@
 ;; småfina inställningar
 (blink-cursor-mode -1)
-(menu-bar-mode 1)
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (show-paren-mode 1)
-;;(global-linum-mode 1)
 (display-time)
 (column-number-mode 1)
-;;(helm-mode 1)
 (display-battery-mode t)
 (setenv "LANG" "sv_SE.UTF-8")
 
 ;; Multiterm
 (setq multi-term-program "/bin/zsh")
-
-;; FUCK YOU YASNIPPET DU DÖDAR MIN APA
-(add-hook 'term-mode-hook (lambda()
-        (setq yas-dont-activate t)))
 
 ;; open to empty scratch
 (setq initial-scratch-message "")
@@ -26,9 +20,6 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized-master/")
 (load-theme 'solarized-dark t)
-
-;; path to os fucker
-(setq exec-path (append exec-path '("/usr/local/bin/")))
 
 ;;; Don't prompt so much
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -54,7 +45,6 @@
 (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
 (define-key dired-mode-map (kbd "C-c h") 'dired-omit-mode)
 
-
 ;; starting dir
 (setq default-directory "~/")
 
@@ -62,25 +52,6 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-;; Yasnippet
-(add-to-list 'load-path "/Users/mcgroin/.emacs.d/elpa/yasnippet-20141117.327")
-(require 'yasnippet)
-(setq yas-snippet-dirs '("~/.emacs.d/elpa/yasnippet-20141117.327/snippets" "~/.emacs.d/snippets/"))
-
-(yas-global-mode 1)
-
-;;; ============================================================================
-;;; Prevent emacs from putting backup files everywhere
-;;; ============================================================================
-;(setq
- ;backup-by-copying t ; don't clobber symlinks
-; backup-directory-alist
- ;'(("." . "~/.saves")) ; don't litter my fs tree
-; delete-old-versions t
-; kept-new-versions 6
- ;kept-old-versions 2
-; version-control t) ; use versioned backups
 
 ;;; Put backup files in tmp directory
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
