@@ -1,12 +1,14 @@
+;;; ============================================================================
 ;; småfina inställningar
-(blink-cursor-mode -1)
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(show-paren-mode 1)
-(display-time)
-(column-number-mode 1)
-(display-battery-mode t)
+;;; ============================================================================
+(blink-cursor-mode -1) ;; Muspekaren slutar blinka
+(menu-bar-mode -1) ;; ingen meny
+(tool-bar-mode -1) ;; ingen toolbar
+(scroll-bar-mode -1) ;; ingen scrollbar
+(show-paren-mode 1) ;; visar matchande paranteser
+(display-time) ;; visar tiden längst ner
+(column-number-mode 1) ;; visar column
+(display-battery-mode t) ;; visar batteritiden
 (setenv "LANG" "sv_SE.UTF-8")
 
 ;; Multiterm
