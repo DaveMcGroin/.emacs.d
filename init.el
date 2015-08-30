@@ -11,31 +11,51 @@
 (display-battery-mode t) ;; visar batteritiden
 (setenv "LANG" "sv_SE.UTF-8")
 
+;;; ============================================================================
 ;; Multiterm
+;;; ============================================================================
 (setq multi-term-program "/bin/zsh")
 
+;;; ============================================================================
 ;; open to empty scratch
+;;; ============================================================================
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
 
+;;; ============================================================================
 ;;color themes
+;;; ============================================================================
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized-master/")
 (load-theme 'solarized-dark t)
 
+;;; Treat all themes as safe
+(custom-set-variables
+ '(custom-safe-themes t))
+
+;;; ============================================================================
 ;;; Don't prompt so much
+;;; ============================================================================
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq confirm-nonexistent-file-or-buffer nil)
 
+;;; ============================================================================
 ;; Don't ask to kill buffers with active processes
+;;; ============================================================================
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function
          kill-buffer-query-functions))
 
+;;; ============================================================================
 ;; smex bindings
+;;; ============================================================================
 (autoload 'smex "smex")
 (global-set-key (kbd "M-x") 'smex)
 (setq smex-save-file "~/.emacs.d/plugin-data/smex/smex-items")
+
+;;; ============================================================================
+;;; dired settings
+;;; ============================================================================
 
 ;;; Dired subtree viewing with 'i'
 (require 'dired)
@@ -50,12 +70,17 @@
 ;; starting dir
 (setq default-directory "~/")
 
+
+;;; ============================================================================
 ;;Melpa package hittepå
+;;; ============================================================================
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+;;; ============================================================================
 ;;; Put backup files in tmp directory
+;;; ============================================================================
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (setq auto-save-list-file-prefix temporary-file-directory)
@@ -88,7 +113,5 @@
 (global-set-key (kbd "M-v") 'scroll-down-half)
 
 
-;;; Treat all themes as safe
-(custom-set-variables
- '(custom-safe-themes t))
+
 
