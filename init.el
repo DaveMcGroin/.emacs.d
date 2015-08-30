@@ -58,36 +58,11 @@
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (setq auto-save-list-file-prefix temporary-file-directory)
 
-;; Omnisharpmode
-(defun fuck-csharp-mode ()
-;  (add-to-list 'company-backends 'company-omnisharp)
-  (omnisharp-mode)
-  (company-mode)
-  (flycheck-mode)
-  (eldoc-mode)
-  (linum-mode))
-
-(add-hook 'csharp-mode-hook 'fuck-csharp-mode)
-(setq flycheck-idle-change-delay 2)
-
 ;;; ============================================================================
 ;;; Enable quicklisp
 ;;; ============================================================================
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "clisp")
-
-;;; ============================================================================
-;;; Use C-c h to do -ls-git, for finding files in a git project
-;;; ============================================================================
-;;(global-set-key (kbd "C-c h") 'helm-ls-git-ls)
-
-
-
-;; lisp extra fontlock
-;≈(lisp-extra-font-lock-global-mode 1)
-;;(require 'exec-path-from-shell) ;; if not using the ELPA package
-;;ser till att shell fungerar rätt
-;;(exec-path-from-shell-initialize)
 
 
 ;;; ============================================================================
