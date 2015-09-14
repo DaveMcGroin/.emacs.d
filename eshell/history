@@ -59,3 +59,27 @@ ls lisp
 cp lisp/rovarspraket.lisp 3LMR/
 ls
 ls 3LMR/
+ls
+cd .emacs.d/
+ls
+ls
+rm init.el\~
+ls
+cd snippets/
+ls
+cd ..
+ls
+ls
+rm -rf snippets/
+ls
+cd plugin-data/
+ls
+cd ..
+ls
+ls themes/
+ls themes/emacs-color-theme-solarized-master/
+ls
+ls
+ls
+cd .emacs.d/
+ls

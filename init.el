@@ -1,20 +1,14 @@
 ;;; ============================================================================
 ;; småfina inställningar
 ;;; ============================================================================
-(blink-cursor-mode -1) ;; Muspekaren slutar blinka
-(menu-bar-mode -1) ;; ingen meny
-(tool-bar-mode -1) ;; ingen toolbar
-(scroll-bar-mode -1) ;; ingen scrollbar
-(show-paren-mode 1) ;; visar matchande paranteser
-(display-time) ;; visar tiden längst ner
-(column-number-mode 1) ;; visar column
+(blink-cursor-mode 0) ;; Muspekaren slutar blinka
+(menu-bar-mode 0) ;; ingen meny
+(tool-bar-mode 0) ;; ingen toolbar
+(scroll-bar-mode 0) ;; ingen scrollbar
+(show-paren-mode t) ;; visar matchande paranteser
+(display-time-mode 1) ;; visar tiden längst ner
+(column-number-mode t) ;; visar column
 (display-battery-mode t) ;; visar batteritiden
-(setenv "LANG" "sv_SE.UTF-8")
-
-;;; ============================================================================
-;; Multiterm
-;;; ============================================================================
-(setq multi-term-program "/bin/zsh")
 
 ;;; ============================================================================
 ;; open to empty scratch
@@ -22,12 +16,20 @@
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
 
+
+;;; ============================================================================
+;;;  Melpa package hittepå
+;;; ============================================================================
+(require 'package)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
+(package-initialize)
+
 ;;; ============================================================================
 ;;color themes
 ;;; ============================================================================
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized-master/")
-(load-theme 'solarized-dark t)
+(load-theme 'hc-zenburn t)
 
 ;;; Treat all themes as safe
 (custom-set-variables
@@ -70,30 +72,12 @@
 ;; starting dir
 (setq default-directory "~/")
 
-
-;;; ============================================================================
-;;Melpa package hittepå
-;;; ============================================================================
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
 ;;; ============================================================================
 ;;; Put backup files in tmp directory
 ;;; ============================================================================
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (setq auto-save-list-file-prefix temporary-file-directory)
-
-
-;;; ============================================================================
-;;; Fix some character issues with M-x ansi-term
-;;; ============================================================================
-(defadvice ansi-term (after advise-ansi-term-coding-system)
-  (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
-(ad-activate 'ansi-term)
-;; Use Emacs terminfo, not system terminfo
-(setq system-uses-terminfo nil)
 
 ;;; ============================================================================
 ;;; Scroll half window height with C-v / M-v (TACK MAX)
@@ -111,7 +95,3 @@
 
 (global-set-key (kbd "C-v") 'scroll-up-half)
 (global-set-key (kbd "M-v") 'scroll-down-half)
-
-
-
-

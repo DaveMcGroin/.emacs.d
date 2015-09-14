@@ -1,21 +1,32 @@
 
 ;; ----- smex-history -----
 (
- w3m
- shell
+ load-theme
  list-packages
- version
- magit-status
- load-file
- cd
+ dired
+ tool-bar-mode
+ 2048-game
+ line-number-mode
+ inf-haskell-mode
 )
 
 ;; ----- smex-data -----
 (
- (magit-status . 4)
- (load-file . 4)
+ (magit-status . 7)
+ (load-file . 7)
  (shell . 2)
- (list-packages . 4)
+ (list-packages . 11)
  (version . 1)
  (w3m . 5)
+ (eshell . 2)
+ (package-install . 1)
+ (make-directory . 1)
+ (package-refresh-contents . 1)
+ (haskell-mode . 1)
+ (inf-haskell-mode . 1)
+ (line-number-mode . 2)
+ (dired . 2)
+ (load-theme . 4)
+ (2048-game . 1)
+ (tool-bar-mode . 1)
 )
