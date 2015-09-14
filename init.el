@@ -69,9 +69,6 @@
 (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
 (define-key dired-mode-map (kbd "C-c h") 'dired-omit-mode)
 
-;; starting dir
-(setq default-directory "~/")
-
 ;;; ============================================================================
 ;;; Put backup files in tmp directory
 ;;; ============================================================================
