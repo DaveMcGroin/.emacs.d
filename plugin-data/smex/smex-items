@@ -1,21 +1,21 @@
 
 ;; ----- smex-history -----
 (
- dired
- magit-status
+ revert-buffer
  list-packages
- package-refresh-contents
  load-theme
- tool-bar-mode
- 2048-game
+ load-file
+ recover-file
+ ansi-term
+ term
 )
 
 ;; ----- smex-data -----
 (
  (magit-status . 8)
- (load-file . 7)
+ (load-file . 14)
  (shell . 2)
- (list-packages . 12)
+ (list-packages . 23)
  (version . 1)
  (w3m . 5)
  (eshell . 2)
@@ -25,8 +25,16 @@
  (haskell-mode . 1)
  (inf-haskell-mode . 1)
  (line-number-mode . 2)
- (dired . 4)
- (load-theme . 4)
+ (dired . 5)
+ (load-theme . 8)
  (2048-game . 1)
  (tool-bar-mode . 1)
+ (elpy-mode . 1)
+ (elpy-enable . 1)
+ (jedi:install-server . 3)
+ (bnfc-mode . 1)
+ (ansi-term . 13)
+ (term . 1)
+ (recover-file . 1)
+ (revert-buffer . 20)
 )

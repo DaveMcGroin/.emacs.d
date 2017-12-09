@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <15/02/02 12:44:10 /Users/mcgroin/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <17/03/10 14:18:57 /home/dave/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -16,4 +16,25 @@
   ("perl" "\\perl")
   ("stat" nil)
   ("id" "/usr/bin/id")
-  ("gid-integer" 0)))
+  ("gid-integer" 0))
+ (["ssh" "davmarkl" "remote11.chalmers.se" nil nil]
+  ("locale" "LC_ALL=en_US.utf8")
+  ("uname" "Linux 2.6.32-642.11.1.el6.x86_64")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/chalmers/users/davmarkl")
+  ("file-exists" "test -e")
+  ("ls" "/bin/ls --color=never")
+  ("ls-dired" t)
+  ("stat" "\\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 256258)
+  ("readlink" "\\readlink")
+  ("gid-string" "davmarkl")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("git" "\\git")
+  ("uid-integer" 256258)))

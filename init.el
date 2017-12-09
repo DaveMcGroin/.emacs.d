@@ -92,3 +92,81 @@
 
 (global-set-key (kbd "C-v") 'scroll-up-half)
 (global-set-key (kbd "M-v") 'scroll-down-half)
+
+;;; ============================================================================
+;;; Elpy skit
+;;; ============================================================================
+(elpy-enable)
+
+;;; ============================================================================
+;;; jedi setup
+;;; ============================================================================
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
+;;; ============================================================================
+;;; javascript stuff
+;;; ============================================================================
+(setq js-indent-level 2)
+
+;;; ============================================================================
+;;; spaces instead of tabs
+;;; ============================================================================
+(setq-default indent-tabs-mode nil)
+
+
+(global-flycheck-mode t)
+(use-package haskell-mode
+  :ensure t
+  :bind
+  (:map haskell-mode-map
+	("C-`" . haskell-interactive-bring)
+	("C-c C-t" . haskell-process-do-type)
+	("C-c c" . haskell-process-cabal)
+	("C-c C-c" . haskell-process-cabal-build)
+	("C-c C-u" . haskell-insert-undefined)
+	("C-c C-a" . haskell-insert-doc))
+
+  :config
+  (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+  (remove-hook 'haskell-mode-hook 'intero-mode)
+  (remove-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
+  (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+  (remove-hook 'haskell-mode-hook 'haskell-indent-mode)
+
+;; Load company on auto-load
+  (use-package company
+    :ensure t
+    :config
+    (add-to-list 'company-backends 'company-ghc)
+    (add-hook 'haskell-mode-hook 'company-mode))
+
+  ;; Load haskell interactive mode on auto-load
+  (use-package haskell-interactive-mode)
+  )
+
+
+(eval-after-load "sql"
+  '(load-library "sql-indent"))
+
+
+;;; Typescript
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+
+;; formats the buffer before saving
+(add-hook 'before-save-hook 'tide-format-before-save)
+
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
